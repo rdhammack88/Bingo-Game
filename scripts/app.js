@@ -1,0 +1,187 @@
+//window.onload = 
+function contains(arr, number) {
+//	for(var index in arr) {
+//        if(index === number) {
+    for(let i = 0; i < arr.length; i+=1) {
+        if(arr[i] === number) {
+            return true;
+        }	
+    }
+}
+
+//	RANDOM NUMBER FUNCTION -- GENERATES NUMBERS TO GAME CARDS
+function randomNumber(numberSetStart, numMultiply, arr) {	//letterSet
+//    console.log(arr);
+	let numList = [];
+    for(let i = 0; i < arr.length; i+=1) {
+        var randomNum = Math.floor(Math.random() * numberSetStart + numMultiply);
+		console.log(randomNum);
+        console.log(arr[i]);
+		var elClass = arr[i].getAttribute('class');
+		
+        switch(elClass) {
+            case 'letterB':
+            case 'letterI':
+                while(randomNum <= numberSetStart || numList.includes(randomNum)) {	//	contains(arr, randomNum)
+                    randomNum = Math.floor(Math.random() * numberSetStart + numMultiply);
+					console.log('line 26');
+					if(!(numList.includes(randomNum))) {
+						break;
+					}
+                }
+                break;
+            case 'letterN':
+            case 'letterG':
+            case 'letterO':
+                while(randomNum <= numberSetStart || numList.includes(randomNum)) {
+					console.log(randomNum);
+                    randomNum = Math.floor(Math.random() * numberSetStart + numMultiply);
+					console.log('line 38');
+					if(!(numList.includes(randomNum)) && randomNum > numberSetStart) {
+						break;
+					}
+                } /*else if(numList.includes(randomNum)) {	//	contains(arr, randomNum)
+                	console.log(randomNum);
+                    randomNum = Math.floor(Math.random() * numberSetStart + numMultiply);
+					console.log('line 36');
+                }*/
+                break;
+            default:
+                console.log("nope");
+                break;
+        }
+		if(numList.length % 5 === 0) {
+			numList = [];
+		}
+		numList.push(randomNum);
+		
+		console.log(numList);
+        arr[i].textContent = randomNum;
+    }
+//	console.log(arr);
+//    console.log(arr.innerHTML);
+}
+
+function generate() {
+    var b = [],
+        i = [],
+        n = [],
+        g = [],
+        o = [];
+    var letters = [b,i,n,g,o];
+
+    var bLetters = Array.from(document.getElementsByClassName("letterB"));
+    var iLetters = Array.from(document.getElementsByClassName("letterI"));
+    var nLetters = Array.from(document.getElementsByClassName("letterN"));
+    var gLetters = Array.from(document.getElementsByClassName("letterG"));
+    var oLetters = Array.from(document.getElementsByClassName("letterO"));
+    
+     
+     randomNumber(15, 1, bLetters);
+     randomNumber(15, 16, iLetters);
+     randomNumber(30, 16, nLetters);
+     randomNumber(45, 16, gLetters);
+     randomNumber(60, 16, oLetters);
+    
+   // for(let i = 0; i < letters.length; i+=1) {
+       // let randomNum = Math.floor(Math.random() * 0 + 16);
+       // nLetters[i].innerHTML = randomNum;
+   // }
+            
+    //numDisplay.innerHTML = numbers;
+  
+  //console.log(bLetters.length);
+  
+}
+
+function startGame() {
+	createTables();
+	
+	var cardCount = document.getElementById('cardCount').value;
+	var gameCards = document.querySelectorAll('table');
+	//	console.log(cardCount);
+	//	console.log(gameCards);
+	
+	document.getElementById('cardSelect').style.display = 'none';
+	document.getElementById('gameBoard').style.display = 'block';
+	
+	for(var i = 0; i < cardCount; i+=1) {
+		gameCards[i].style.display = 'inline-block';
+	}
+	
+//	createTables();
+	generate();
+	
+	
+}
+
+
+
+function createTables() {
+	
+	var cardCount = document.getElementById('cardCount').value;
+//document.createElement('thead');
+
+	var gameBoard = document.getElementById('gameBoard');
+	
+	for(var i = 0; i < cardCount; i+=1) {
+		var table = document.createElement('table');
+		gameBoard.appendChild(table);
+
+		table.innerHTML = '<thead>	\
+						<th>B</th>	\
+						<th>I</th>	\
+						<th>N</th>	\
+						<th>G</th>	\
+						<th>O</th>	\
+					</thead>	\
+					<tbody>	\
+						<tr rowspan="4">	\
+							<td class="letterB"></td>	\
+							<td class="letterI"></td>	\
+							<td class="letterN"></td>	\
+							<td class="letterG"></td>	\
+							<td class="letterO"></td>	\
+						</tr>	\
+						<tr rowspan="4">	\
+							<tr rowspan="4">	\
+							<td class="letterB"></td>	\
+							<td class="letterI"></td>	\
+							<td class="letterN"></td>	\
+							<td class="letterG"></td>	\
+							<td class="letterO"></td>	\
+						</tr>	\
+						<tr rowspan="4">	\
+							<tr rowspan="4">	\
+							<td class="letterB"></td>	\
+							<td class="letterI"></td>	\
+							<td id="freeSpace">FREE SPACE</td>	\
+							<td class="letterG"></td>	\
+							<td class="letterO"></td>	\
+						</tr>	\
+						<tr rowspan="4">	\
+							<tr rowspan="4">	\
+							<td class="letterB"></td>	\
+							<td class="letterI"></td>	\
+							<td class="letterN"></td>	\
+							<td class="letterG"></td>	\
+							<td class="letterO"></td>	\
+						</tr>	\
+						<tr rowspan="4">	\
+							<tr rowspan="4">	\
+							<td class="letterB"></td>	\
+							<td class="letterI"></td>	\
+							<td class="letterN"></td>	\
+							<td class="letterG"></td>	\
+							<td class="letterO"></td>	\
+						</tr>	\
+					</tbody>'
+	}
+}
+
+
+
+
+//createTables();
+
+

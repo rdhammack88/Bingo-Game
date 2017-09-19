@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    background-color: #3fe;
+}
+
+fieldset {
+	width: 80%;
+	height: 300px;
+	margin: 0 auto;
+}
+
+select {
+	width: 40%;
+	margin: 25% 30% 30px;
+}
+
+/*
+option {
+	text-align: center;
+}
+*/
+
+button {
+    /*display: block;*/
+    width: 80px;
+    margin: 0 40%;
+    
+}
+
+div {
+    width: 90%;
+    height: 855px;
+    margin: 30px auto 40px;
+    display: none;
+}
+
+table {
+	width: 45%;
+    background-color: #000;
+    margin: 5px 10px;
+    display: none;
+/*    visibility: hidden;*/
+}
+
+#freeSpace {
+    font-size: .7em;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f;
+}
+
+td {
+    width: 20%;		/*30px;*/
+    height: 30px;
+    background-color: #fff;
+    text-align: center;
+}
+
+
+
+@media screen and (min-width: 481px) {
+    
+}
+
+
+@media screen and (min-width: 721px) {
+    
+}
+
+
+@media screen and (min-width: 1081px) {
+    
+}
+
+
+@media screen and (min-width: 1441px) {
+    
+}

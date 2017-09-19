@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bingo Card</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    
+        <header>
+            <h1>BINGO!</h1>
+        </header>
+        
+        <fieldset id="cardSelect">
+        	<legend></legend>
+        	<select name="cardCount" id="cardCount" >
+        		<option value="#" disabled>Pick Your Card Count</option>
+        		<option value="1">1 Card</option>
+        		<option value="2">2 Cards</option>
+        		<option value="3">3 Cards</option>
+        		<option value="4">4 Cards</option>
+        		<option value="5">5 Cards</option>
+        		<option value="6">6 Cards</option>
+        	</select>
+        	
+        	<button onclick="startGame()">Start</button>
+        </fieldset>
+        
+        <!--<button onclick="createTables()">create board</button>-->
+        
+        <div id="gameBoard">
+           
+            
+        </div>
+        
+        
+        
+        
+        <script src="app.js"></script>
+        
+    </body>
+</html>
