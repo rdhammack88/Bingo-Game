@@ -29,54 +29,170 @@ button {
     
 }
 
-div {
-    width: 90%;
-    height: 855px;
+div #gameBoard {
+    width: 95%;
+    height: 100%;	/*855px;*/
     margin: 30px auto 40px;
     display: none;
 }
 
-table {
-	width: 45%;
+#gameBoard table {
+	width: 40%;
     background-color: #000;
-    margin: 5px 10px;
+    margin: 5px 5%;
     display: none;
 /*    visibility: hidden;*/
 }
 
-#freeSpace {
+#gameBoard #freeSpace {
     font-size: .7em;
     text-align: center;
 }
 
-th {
+#gameBoard th {
     background-color: #f4f;
 }
 
-td {
-    width: 20%;		/*30px;*/
+#gameBoard td {
+    width: 21%;		/*30px;*/
     height: 30px;
     background-color: #fff;
     text-align: center;
 }
 
+#numDisplay {
+	display: block;
+}
 
-
+/*VIEWPORT @MEDIA BREAKPOINT*/
 @media screen and (min-width: 481px) {
-    
+	body {
+		width: 80%;
+		margin: 0 auto;
+	}
+	
+    #gameBoard table {
+	width: 40%;
+    background-color: #000;
+    margin: 5px 5%;
+    display: none;
+	}
+
+	#gameBoard td {
+		
+		position: relative;
+		width: 20%;		/*30px;*/
+		height: 30px;
+		background-color: #fff;
+		text-align: center;
+	}
 }
 
-
+/*VIEWPORT @MEDIA BREAKPOINT*/
 @media screen and (min-width: 721px) {
-    
+    #gameBoard table {
+		width: 30%;
+	}
 }
 
-
+/*VIEWPORT @MEDIA BREAKPOINT*/
 @media screen and (min-width: 1081px) {
-    
+    #gameBoard table {
+		width: 20%;
+	}
+}
+
+/*VIEWPORT @MEDIA BREAKPOINT*/
+@media screen and (min-width: 1441px) {
+    #gameBoard table {
+		width: 15%;
+	}
 }
 
 
-@media screen and (min-width: 1441px) {
-    
+/*LANDSCAPE VIEWPORT @MEDIA*/
+@media screen and (min-width: 600px) and (min-height: 250px) {
+    	
+	body {
+		width: 95%;
+		margin: 0 auto;
+		padding: 0;
+		font-size: 100%;
+		background-color: #3fe;
+	}
+	
+	h1 {
+		font-size: 150%;
+		margin: 0 auto;
+		
+	}
+
+	fieldset {
+		width: 50%;
+		height: 300px;
+		margin: 0 auto;
+		float: right;
+	}
+
+	select {
+		width: 40%;
+		margin: 25% 30% 30px;
+	}
+
+	button {
+		/*display: block;*/
+		width: 80px;
+		margin: 0 40%;
+
+	}
+
+	div#gameBoard {
+		width: 80%;
+		height: 100%;	/*855px;*/
+		margin: 0;
+		display: none;
+		float: right;
+	}
+
+	#gameBoard table {
+		width: 31%;
+/*		height: 150px;*/
+		background-color: #000;
+		margin: 3px 5px;
+		display: none;
+		float: right;
+	}
+
+	#gameBoard #freeSpace {
+		font-size: .7em;
+		text-align: center;
+	}
+
+	#gameBoard th {
+		background-color: #f4f;
+	}
+
+	#gameBoard td {
+		width: 20%;		/*30px;*/
+/*			height: 17%;*/
+		background-color: #fff;
+		text-align: center;
+	}
+
+	#numDisplay {
+		/*display: block;*/
+		float: left;
+		font-size: .8em;
+		background-color: #888;
+		width: 14.5%;
+	}
+	
+	#numDisplay {
+		
+	}
+	
+	#numDisplay td {
+		text-align: center;
+	}
+
 }
